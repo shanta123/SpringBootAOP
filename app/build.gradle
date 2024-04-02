@@ -31,7 +31,8 @@ dependencies {
     testImplementation libs.junit
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.0.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -47,7 +48,8 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'my.spring.boot.project.App'
+    //mainClass = 'my.spring.boot.project.App'
+    mainClass = 'org.example.App'
 }
 
 tasks.named('test') {

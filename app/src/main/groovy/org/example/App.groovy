@@ -3,11 +3,17 @@
  */
 package org.example
 
+import org.apache.catalina.core.ApplicationContext
+import org.example.Beans.UserConfig
 import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.context.support.ClassPathXmlApplicationContext
 
-
+@SpringBootApplication
 class App {
     static void main(String[] args) {
        SpringApplication.run(App.class, args)
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml")
+        UserConfig config = (UserConfig) context.getBean("userConfigBean")
     }
 }
